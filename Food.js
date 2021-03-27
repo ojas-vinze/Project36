@@ -9,7 +9,6 @@ class Foodc{
         var x=80, y=100;
 
         imageMode(CENTER);
-        image(this.image,720,220,70,70);
 
         if(this.foodstock!==0){
             for(var i=0; i<this.foodstock; i++){
@@ -26,7 +25,7 @@ class Foodc{
     getfoodstock(){
         var foodstockref=database.ref('Food');
         foodstockref.on("value",(data)=>{
-            foodstock=data.val();
+            foods=data.val();
         })
     }
 
@@ -45,5 +44,14 @@ class Foodc{
               Food:x
             })
         }
+    }
+
+    getfeedtime(){
+        var foodtimeref = database.ref('Feedtime');
+        console.log(foodtimeref);
+        foodtimeref.on("value",(data)=>{
+            lastfed=data.val();
+            console.log("in db" + lastfed);
+        })
     }
 }
