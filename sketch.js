@@ -9,7 +9,7 @@ function preload(){
 
 function setup(){
   createCanvas(1200, 570);
-  
+  database=firebase.database();
   foodobj = new Foodc();
   // foodobj.foodstock=20;
   foodobj.getfeedtime();
@@ -19,8 +19,6 @@ function setup(){
   dog = createSprite(600,285,30,70);
   dog.addImage(dogimg);
   dog.scale = 0.3;
-
-  database=firebase.database();
 
   // foodstock=database.ref('Food');
   // foodstock.on("value",readstock);
@@ -63,10 +61,6 @@ function draw(){
   drawSprites();
 }
 
-function readstock(data){
-  foods=data.val();
-  console.log(foods);
-}
 
 function feeddog(){
   milk.visible=true;
