@@ -10,8 +10,8 @@ class Foodc{
 
         imageMode(CENTER);
 
-        if(this.foodstock!==0){
-            for(var i=0; i<this.foodstock; i++){
+        if(foods!==0){
+            for(var i=0; i<foods; i++){
                 if(i%10===0){
                     x=80;
                     y=y+50;
